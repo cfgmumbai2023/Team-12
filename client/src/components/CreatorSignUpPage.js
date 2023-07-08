@@ -53,11 +53,11 @@ export default function SignUp() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3005/api/auth/login", //change the signup location
+        "http://localhost:3005/api/creator/register", //change the signup location
         {
           name,
           email,
-          phoneNo,
+          'number':phoneNo,
           gender,
           password,
         },
@@ -101,7 +101,7 @@ export default function SignUp() {
           </Typography>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/user/register" variant="body2">
+              <Link href="/register" variant="body2">
                 Are you a regular user? Click here!
               </Link>
             </Grid>

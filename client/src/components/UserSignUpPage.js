@@ -67,13 +67,13 @@ export default function SignUp() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3005/api/auth/login", //change the signup location
+        "http://localhost:3005/api/consumer/register", //change the signup location
         {
           name,
           email,
-          schoolName,
-          userClass,
-          schoolBoard,
+          'schoolname':schoolName,
+          'class':userClass,
+          'board':schoolBoard,
           password,
         },
         {
@@ -83,11 +83,11 @@ export default function SignUp() {
         }
       );
       const data = response.data;
-      if (data.status === 200) {
+      if (data.success === true) {
         //document.cookie = `token=${data.token}; path=/`;
         // OR you can use localStorage
         //localStorage.setItem("token", data.token);
-        navigate(`/user/${data.name}`); //Put the proper address here
+        navigate(`/user/`); //Put the proper address here
       } else {
         console.log("Please check username and password");
       }

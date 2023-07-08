@@ -47,7 +47,7 @@ export default function SignIn() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3005/api/auth/login", //change the login location
+        "http://localhost:3005/api/consumer/login", //change the login location
         {
           email,
           password,
@@ -133,7 +133,7 @@ export default function SignIn() {
             <Grid container>
               <Grid item xs></Grid>
               <Grid item>
-                <Link href="/user/register" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

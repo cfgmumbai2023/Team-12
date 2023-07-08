@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const { connectDB, conn } = require('./src/db/connection');
 const User = require('./src/db/user')
-const Video = require('./api/src/db/video');
+const Video = require('./src/db/video');
 var bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');

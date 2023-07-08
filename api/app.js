@@ -40,6 +40,8 @@ app.post('/api/creator/login', LoginCreator);
 app.post('/api/consumer/register', RegisterConsumer);
 app.post('/api/creator/register', RegisterCreator);
 
+app.post('/saveVideo/', saveVideo);
+
 app.get('/getCreatorVideos/:creatorId', creatorauth, async(req, res) => {
     if(!req.isAuth){
         res.redirect('/creator/login');
@@ -76,3 +78,4 @@ app.get('/getVideos', consumerauth, async(req, res) => {
 server.listen(PORT, () => {
     console.log(`Express app listening to PORT ${PORT}`);
 })
+

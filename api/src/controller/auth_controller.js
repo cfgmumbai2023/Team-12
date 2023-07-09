@@ -122,22 +122,24 @@ exports.LoginCreator = (req, res) => {
 
 // save video to database
 exports.saveVideo = async(req, res) => {
-    const { title, description, link, classnumber, subject, lessonname, email } = req.body;
+    const { title, description, link, classname, subject, lessonname, email, tags, id } = req.body;
     const video = new Video({
         title,
         description,
         link,
         tags,
-        classnumber,
+        classname,
         subject,
         lessonname,
         email,
+        id
     });
     await video.save((err, doc) => {
         if (err) {
             console.log(err);
             return res.status(422).json({ errors: err })
         } else {
+            console.log("Video saved");
             return res.status(200).json({
                 success: true,
                 message: 'Successfully Saved Video',

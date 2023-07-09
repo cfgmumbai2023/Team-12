@@ -32,7 +32,7 @@ connectDB();
 const { consumerauth } = require('./src/middleware/consumerauth')
 const { creatorauth } = require('./src/middleware/creatorauth')
 
-const { LoginConsumer, LoginCreator, RegisterConsumer, RegisterCreator } = require('./src/controller/auth_controller');
+const { LoginConsumer, LoginCreator, RegisterConsumer, RegisterCreator, saveVideo } = require('./src/controller/auth_controller');
 
 app.post('/api/consumer/login', LoginConsumer);
 app.post('/api/creator/login', LoginCreator);

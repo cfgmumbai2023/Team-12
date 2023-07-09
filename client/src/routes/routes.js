@@ -6,8 +6,15 @@ import {
 import UserSignUpPage from "../components/UserSignUpPage";
 import CreatorSignUpPage from "../components/CreatorSignUpPage";
 import SignIn from "../components/LoginPage";
-import { ChannelDetail, VideoDetail, SearchFeed,Navbar, Feed } from '../components';
+import {
+  ChannelDetail,
+  VideoDetail,
+  SearchFeed,
+  Navbar,
+  Feed,
+} from "../components";
 import { RootLayout } from "../components/RootLayout";
+import UserDash from "../components/UserDash";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,12 +22,12 @@ const router = createBrowserRouter(
       <Route path="/register" element={<UserSignUpPage />} />
       <Route path="/creator/register" element={<CreatorSignUpPage />} />
       <Route path="/login" element={<SignIn />} />
-      <Route exact path='/user' element={<Feed />} />
-    <Route path='/video/:id' element={<VideoDetail />} />
-    <Route path='/user/channel/:id' element={<ChannelDetail />} />
-    <Route path='/user/search/:searchTerm' element={<SearchFeed />} />
+      <Route exact path="/user" element={<Feed />} />
+      <Route path="/video/:id" element={<VideoDetail />} />
+      <Route path="/user/channel/:id" element={<ChannelDetail />} />
+      <Route path="/user/search/:searchTerm" element={<SearchFeed />} />
+      <Route path="/user/cudashboard" element={<UserDash />} />
     </Route>
-
   )
 );
 
